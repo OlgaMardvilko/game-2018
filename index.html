@@ -1,0 +1,106 @@
+<html lang="en">
+
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+	<meta name="Keywords" content="Game, children game, battle game">
+      <title>Battle Game</title>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.7/dialog-polyfill.js"></script>
+   <link href="./css/style.bundle.css" rel="stylesheet"></head>
+
+   <body>
+        <div class='wrapper state__start' id="start__screen">
+
+            <div class="registration">
+                <form name="form-registration" method="#" action="#" class="form-registration" id="form-registration" onsubmit="return false">
+                        <p class="form-item">
+                              <label for="add__player__name">Введи свое имя и отправляйся в замок</label>
+                              <input type="text" id="add__player__name" autocomplete="add__player__name" placeholder="твое имя">
+                        </p>
+                    <input type="submit" value="Play" class="management__play__button submit" id="start__game">
+                </form>
+            </div>
+        <div class="fon__castle"></div>
+        </div>
+
+        <div class="wrapper state__duel remove" id="duil__screen">
+            <header class="header__state__duel">
+                <div class="state__duel__pattern"></div>
+            </header>
+            <main class="main__state__duel" id="main__state__duel">
+                <div class="managment__game">
+                    <div class="managment__player">
+                        <div class="player__health" id="player__health">
+                            <div class="player__health__progress" id="player__health__progress">100hp</div>
+                        </div>
+                        <p class="player__name" id="player__name"></p>
+                    </div>
+
+                    <div class="managment__hit" id="managment__hit"></div>
+
+                    <dialog id="dialog__modal">
+                        <h3 class="modal__header">Сражайся, <span id="modal__name__player">Имя игрока</span>!</h3>
+                        <div class="modal__body">
+                          <p>Замок полон врагов. Победи их!</p>
+                          <p>Выполни задание правильно и сможешь применить заклинание против врага. Ошибёшься, удар нанесёт <span id="modal__name__enemy">враг</span>.
+                          </p>
+                          <p>Перед началом сражения <span class="modal__hit__text">выбери заклинание:</span></p>
+                        </div>
+                        <footer class="modal__footer">
+                            <div class="hit__icon hit_one" title="ураган" id="hitHurricane"></div>
+                            <div class="hit__icon hit_two" title="снегопад" id="hitSnowfall"></div>
+                            <div class="hit__icon hit_three" title="огонь" id="hitFire"></div>
+                            <div class="hit__icon hit_four" title="звездопад" id="hitStarfall"></div>
+                            <div class="hit__icon hit_five" title="вихрь" id="hitVortex"></div>
+                        </footer>
+                    </dialog>
+
+                    <div class="managment__enemy">
+                            <div class="enemy__health" id="enemy__health">
+                                <div class="enemy__health__progress" id="enemy__health__progress">100hp</div>
+                            </div>
+                            <p class="enemy__name" id="enemy__name"></p>
+                        </div>
+                </div>
+                <div class="block__hit remove" id="block__hit"></div>
+
+                <section class="task__screen remove" id="task__screen">
+                    <h3 class="task__header"><span id="task__question">Реши задачу</span></h3>
+                    <div class="task__body">
+                        <div class="task__condition__wrapper">
+                            <h4></h4>
+                            <p class="task__condition" id="task__condition"></p>
+                        </div>
+                        <div class="task__answer">
+                            <input type="text" id="task__answer" placeholder="твой ответ" autofocus>
+                            <label for="task__answer" class="answer__error answer__correct" id="result__answer"></label>
+                        </div>
+                    </div>
+                    <div class="task__footer">
+                        <p class="task__answer__button" id="button__answer">Ответить!</p>
+                    </div>
+                </section>
+                <section class="screen__score remove" id="screen__score">
+                    <h2>Игра окончена!</h2>
+                    <table id="records__table">
+                        <caption>Результаты</caption>
+                        <tr>
+                            <th>Имя игрока</th>
+                            <th>Рекорд</th>
+                        </tr>
+                    </table>
+                </section>
+            </main>
+            <footer class="footer__state__duel">
+                    <div class="duel__pattern"></div>
+            </footer>
+        </div>
+         <div class="screen_duel">
+            <!-- <canvas id="canvas"></canvas> -->
+        </div>
+
+    <script type="text/javascript" src="./js/main.bundle.js"></script></body>
+
+</html>
